@@ -32,7 +32,7 @@ jobs:
 
       - name: Check for GIT_USER_EMAIL
         run: |
-          test -n "${{ GIT_USER_EMAIL }}"
+          test -n "${{ env.GIT_USER_EMAIL }}"
 
       - name: Checkout the repo
         uses: actions/checkout@v4
