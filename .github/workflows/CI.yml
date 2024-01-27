@@ -7,7 +7,7 @@
 
 name: CI
 
-on: # yamllint disable-line rule:truthy
+on:  # yamllint disable-line rule:truthy
 
   push:
     branches:
@@ -71,12 +71,12 @@ jobs:
           git config --global user.email ${{ vars.GIT_USER_EMAIL }}
           git commit -m "added autgenerated collection by job ${{ github.job }}#${{ github.run_number }}"
           git push origin ${{ github.ref_name }}
-          
+
   ANSIBLECOLLECTION:
     # don't run on pull request from ourselves
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     # run ansible-test, lint, etc.
     uses: mafalb/workflows/.github/workflows/reusable-ansiblecollection.yml@dev
     needs: AUTOGENERATE
-      
+
 ...
