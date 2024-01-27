@@ -31,7 +31,7 @@ jobs:
     permissions:
       contents: write
     outputs:
-      ref: ${{ jobs.commit.outputs.ref }}
+      ref: ${{ steps.commit.outputs.ref }}
 
     steps:
 
