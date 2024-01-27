@@ -1,5 +1,4 @@
-Ansible Collections for CI
-==========================
+# Ansible Collections for CI
 
 We need small collections to test
 
