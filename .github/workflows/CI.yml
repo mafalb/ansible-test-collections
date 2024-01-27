@@ -44,6 +44,8 @@ jobs:
 
       - name: Checkout the repo
         uses: actions/checkout@v4
+        with:
+          path: ansible-test-collections
 
       - name: Checkout ansible collection skeleton
         uses: actions/checkout@v4
