@@ -71,6 +71,7 @@ jobs:
 
       - name: Push the changes
         id: commit
+        working-directory: ansible-test-collections
         run: |
           git config --global user.name Continuous Integration
           git config --global user.email ${{ vars.GIT_USER_EMAIL }}
