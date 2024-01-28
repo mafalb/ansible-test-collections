@@ -102,7 +102,7 @@ jobs:
     # don't run on pull request from ourselves
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     # run ansible-test, lint, etc.
-    uses: mafalb/workflows/.github/workflows/reusable-ansiblecollection.yml@dev
+    uses: mafalb/workflows/.github/workflows/reusable-ansiblecollection.yml@${{ needs.AUTOGENERATE.outputs.ref }}
     with:
       ref: ${{ needs.AUTOGENERATE.outputs.ref }}
       mock: true
