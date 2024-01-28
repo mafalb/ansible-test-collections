@@ -86,13 +86,12 @@ jobs:
         id: commit
         working-directory: ansible-test-collections
         run: |
-          pwd
+          git add -A
           git diff
-          if git diff --no-ext-diff --quiet --exit-code ; then
+          if ! git diff --cached --no-ext-diff --quiet --exit-code ; then
               # some files have changed
               git config --global user.name Continuous Integration
               git config --global user.email ${{ vars.GIT_USER_EMAIL }}
-              git add -A
               git commit -m "added autgenerated collection by job ${{ github.job }}#${{ github.run_number }}"
               git push origin $TARGETED_BRANCH
           fi
