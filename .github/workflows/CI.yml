@@ -20,8 +20,8 @@ on:  # yamllint disable-line rule:truthy
       targeted_branch:
         type: choice
         options:
-          - main
           - dev
+          - main
 
 jobs:
 
