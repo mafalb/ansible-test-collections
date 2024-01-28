@@ -30,15 +30,16 @@ jobs:
     with:
       targeted_branch: ${{ inputs.targeted_branch }}
     
-  AUTOGENERATE:
+  autogenerate:
     # don't run on pull request from ourselves
     #
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
     outputs:
+      # The sha1 of the latest commit
       ref: ${{ steps.commit.outputs.ref }}
     needs: PREPARE
     env:
