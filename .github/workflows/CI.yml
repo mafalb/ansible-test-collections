@@ -105,6 +105,7 @@ jobs:
     uses: mafalb/workflows/.github/workflows/reusable-ansiblecollection.yml@dev
     with:
       ref: ${{ needs.AUTOGENERATE.outputs.ref }}
+      mock: true
     needs: AUTOGENERATE
 
 ...
