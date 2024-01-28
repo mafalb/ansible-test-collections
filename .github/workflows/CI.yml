@@ -43,7 +43,7 @@ jobs:
       ref: ${{ steps.commit.outputs.ref }}
     needs: PREPARE
     env:
-      TARGETED_BRANCH: ${{ needs.PREPARE.outputs.branch }}
+      TARGETED_BRANCH: ${{ needs.PREPARE.outputs.ref }}
 
     steps:
 
