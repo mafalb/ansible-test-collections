@@ -88,8 +88,7 @@ jobs:
         run: |
           pwd
           git add -A
-          git status --porcelain
-          if git status --porcelain|grep ^M ; then
+          if git diff --no-ext-diff --quiet --exit-code ; then
               # some files have changed
               git config --global user.name Continuous Integration
               git config --global user.email ${{ vars.GIT_USER_EMAIL }}
