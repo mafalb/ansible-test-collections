@@ -87,6 +87,7 @@ jobs:
         working-directory: ansible-test-collections
         run: |
           pwd
+          git diff
           if git diff --no-ext-diff --quiet --exit-code ; then
               # some files have changed
               git config --global user.name Continuous Integration
