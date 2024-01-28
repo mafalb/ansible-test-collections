@@ -44,7 +44,6 @@ jobs:
     needs: PREPARE
     env:
       TARGETED_BRANCH: ${{ needs.PREPARE.outputs.ref }}
-      x: ${{ needs.PREPARE.outputs.x }}
 
     steps:
 
@@ -65,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: mafalb/ansible_collection_skeleton
-          ref: $TARGETED_BRANCH
+          ref: ${{ needs.PREPARE.outputs.ref }}
           path: ansible_collection_skeleton
 
       - name: Debug
