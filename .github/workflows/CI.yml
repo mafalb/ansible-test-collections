@@ -82,7 +82,7 @@ jobs:
               git push origin ${{ github.ref_name }}
           fi
           sha=$(git log --no-decorate --pretty=format:%H -n 1)
-          echo "{ref}={$sha}" >> $GITHUB_OUTPUT
+          echo "ref=$sha" >> $GITHUB_OUTPUT
 
   ANSIBLECOLLECTION:
     # don't run on pull request from ourselves
