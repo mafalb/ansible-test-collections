@@ -126,5 +126,4 @@ jobs:
       - sanity
       - autogenerate
       - ansiblecollection
-
 ...
