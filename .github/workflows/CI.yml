@@ -8,7 +8,7 @@
 name: Ci
 
 on:  # yamllint disable-line rule:truthy
-  pullrequest:
+  pull_request:
   push:
     branches:
       - '**'
