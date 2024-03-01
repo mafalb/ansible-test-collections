@@ -1,3 +1,5 @@
+I stopped using this. Instead I build collections on the fly from the skeletons in ![https://github.com/mafalb/skeletons](https://github.com/mafalb/skeletons/)
+
 # Ansible Collections for CI
 
 ||mafalb/ansible-test-collections|mafalb/skeletons|
